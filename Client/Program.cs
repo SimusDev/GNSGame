@@ -30,11 +30,8 @@ namespace Client
                 }
             };
 
-            utils.SetStatusCallback(status);
 
             Address address = new Address();
-
-            address.SetAddress("::1", port);
 
             connection = client.Connect(ref address);
 
