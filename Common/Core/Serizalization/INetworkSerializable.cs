@@ -1,5 +1,4 @@
-
-namespace Common.Serialization
+namespace Common.Core.Serizalization
 {
     public interface INetworkSerializable
     {

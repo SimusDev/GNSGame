@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace Common.Serialization;
+namespace Common.Core.Serizalization;
 
 public unsafe class BinaryReader : IDisposable
 {

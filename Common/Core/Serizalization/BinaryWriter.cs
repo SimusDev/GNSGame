@@ -2,7 +2,7 @@ using System;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace Common.Serialization;
+namespace Common.Core.Serizalization;
 
 public unsafe class BinaryWriter : IDisposable
 {
