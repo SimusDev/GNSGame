@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
+            Valve.Sockets.Library.Initialize();
 
+            Valve.Sockets.Library.Deinitialize();
         }
     }
 }
