@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="GNSGame.csproj" />
+  <Project Path="Client/Client.csproj" Id="c74a4a7f-c501-4aca-8de4-a2b596bb7f58" />
+  <Project Path="Common/Common.csproj" Id="da65f0e5-bfa5-460f-bb10-e23b6a7c2651" />
+  <Project Path="Server/Server.csproj" Id="6281ba00-65bd-438b-a04b-fb811355ec79" />
 </Solution>
