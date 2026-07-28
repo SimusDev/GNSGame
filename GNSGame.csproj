@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="GameNetworkingSockets" Version="1.6.0" />
+    <PackageReference Include="SFML.Net" Version="3.0.0" />
   </ItemGroup>
 
 </Project>
