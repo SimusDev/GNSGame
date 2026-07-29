@@ -4,7 +4,7 @@ namespace Client
     internal class Program
     {
         static Common.Network.ClientMultiplayerAPI? Multiplayer;
-        static Common.Core.Scene.World? World;
+        static World? World;
 
         static void Main(string[] args)
         {

@@ -6,8 +6,8 @@
 
         public Entity Root => _root;
 
-        private Network.MultiplayerAPI _multiplayer;
-        private Network.MultiplayerAPI Multiplayer => _multiplayer;
+        protected Network.MultiplayerAPI _multiplayer;
+        protected virtual Network.MultiplayerAPI Multiplayer => _multiplayer;
 
         public void Initialize(Network.MultiplayerAPI multiplayer)
         {

@@ -44,7 +44,6 @@ namespace Common.Network
         {
             _listener = new();
             _netManager = new(_listener);
-
         }
 
         ~MultiplayerAPI()
