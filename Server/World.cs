@@ -10,8 +10,16 @@ namespace Server
 
         protected override void Start()
         {
-            var player = new Entity();
-            Root.AddChild(player);
+            while (!Console.KeyAvailable)
+            {
+                ParseConsoleLine(Console.ReadLine());
+            }
         }
+
+        public void ParseConsoleLine(string command)
+        {
+
+        }
+
     }
 }
