@@ -22,8 +22,10 @@ namespace Common.Core.Scene
             _commands[command] = bind;
         }
 
-        public void ParseConsoleArgLine(string arg)
+        public void ParseConsoleArgLine(string? arg)
         {
+            if (arg == null) return;
+
             if (arg[0] == '/')
             {
                 ParseCommand(arg.Remove(0, 1));

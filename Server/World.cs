@@ -1,10 +1,24 @@
-﻿
-using Common.Core.Scene;
+﻿using Friflo.Engine.ECS;
+using Friflo.Engine.ECS.Systems;
 using Common.Network;
+
 namespace Server
 {
     public class World : Common.Core.Scene.World
     {
+        private readonly EntityStore _entityStore = new();
+        public EntityStore EntityStore => _entityStore;
+
+        private readonly SystemRoot _systemRoot;
+        public SystemRoot SystemRoot => _systemRoot;
+
+        public World()
+        {
+            _systemRoot = new(_entityStore) {
+                new Common.Core.System.Movement(),
+            };
+        }
+
         protected override ServerMultiplayerAPI Multiplayer => (ServerMultiplayerAPI)_multiplayer;
 
         protected override void Start()
