@@ -13,9 +13,14 @@ namespace Common.Network
 
         public void ConnectToServer(string address, int port)
         {
+            _netManager!.Start();
             NetPeer peer = _netManager!.Connect(address, port, GetConnectionKey());
             if (peer != null)
                 Logger.Print($"Starting connection to {address}:{port}...");
+            else
+            {
+                Logger.Print($"Failed connect to {address}:{port}");
+            }
         }
 
     }

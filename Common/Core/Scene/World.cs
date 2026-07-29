@@ -1,4 +1,7 @@
-﻿namespace Common.Core.Scene
+﻿using Common.Core.Debug;
+using Friflo.Json.Fliox.Schema.GraphQL;
+
+namespace Common.Core.Scene
 {
     public class World
     {
@@ -6,7 +9,7 @@
         protected Network.MultiplayerAPI _multiplayer;
         protected virtual Network.MultiplayerAPI Multiplayer => _multiplayer;
 
-        private Dictionary<string, Action<string[]>> _commands = new();
+        private Dictionary<string, Action<string, string[]>> _commands = new();
 
         public void Initialize(Network.MultiplayerAPI multiplayer)
         {
@@ -14,7 +17,7 @@
             Start();
         }
 
-        public void RegisterCommand(string command, Action<string[]> bind)
+        public void RegisterCommand(string command, Action<string, string[]> bind)
         {
             _commands[command] = bind;
         }
@@ -23,16 +26,25 @@
         {
             if (arg[0] == '/')
             {
-                ParseCommand(arg.Remove(0));
+                ParseCommand(arg.Remove(0, 1));
             }
         }
 
-        public void ParseCommand(string cmd)
+        public void ParseCommand(string line)
         {
-            switch(cmd)
+            string cmd = line.Split(' ')[0];
+            string withoutCommand = line.Remove(0, cmd.Length);
+            if (withoutCommand.Length > 0 && withoutCommand[0] == ' ')
+                withoutCommand = withoutCommand.Remove(0, 1);
+
+            if (_commands.TryGetValue(cmd, out var action))
             {
-                case "":
-                    break;
+                string[] args = withoutCommand.Split(' ');
+                action(cmd, args);
+            }
+            else
+            {
+                Logger.Print("Unknown command.");
             }
         }
 

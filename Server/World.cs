@@ -9,9 +9,21 @@ namespace Server
 
         protected override void Start()
         {
+            RegisterCommand("start", CmdEnter);
+            
             while (!Console.KeyAvailable)
             {
                 ParseConsoleArgLine(Console.ReadLine());
+            }
+        }
+
+        private void CmdEnter(string cmd, string[] args)
+        {
+            switch(cmd)
+            {
+                case "start":
+                    Multiplayer.CreateServer(7856);
+                    break;
             }
         }
 
