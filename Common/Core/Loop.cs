@@ -10,11 +10,11 @@ namespace Common.Core
 
         private Stopwatch _stopwatch = new();
 
-        private double _deltaTime = 0;
+        private float _deltaTime = 0;
 
-        private Action<double> _tickFunc;
+        private Action<float> _tickFunc;
 
-        public Loop(Action<double> tickFunc)
+        public Loop(Action<float> tickFunc)
         {
             _tickFunc = tickFunc;
         }
@@ -30,7 +30,7 @@ namespace Common.Core
             while (_isRunning)
             {
                 double currentTime = _stopwatch.Elapsed.TotalSeconds;
-                _deltaTime = currentTime - lastTime;
+                _deltaTime = (float)(currentTime - lastTime);
                 lastTime = currentTime;
 
                 _tickFunc.Invoke(_deltaTime);

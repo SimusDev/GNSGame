@@ -56,7 +56,7 @@ namespace Common.Core.Scene
             
         }
 
-        public virtual void Tick(double delta)
+        public virtual void Tick(float delta)
         {
 
         }
