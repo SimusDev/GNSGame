@@ -23,6 +23,7 @@ namespace Server
 
         static void Loop(double delta)
         {
+            Multiplayer!.Poll();
             World!.Tick(delta);
         }
 

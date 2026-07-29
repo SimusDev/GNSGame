@@ -59,10 +59,6 @@ namespace Common.Network
             _netManager?.Stop();
         }
 
-
-
-
-
         public void Poll()
         {
             _netManager!.PollEvents();

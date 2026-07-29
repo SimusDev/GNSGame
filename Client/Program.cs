@@ -19,6 +19,7 @@ namespace Client
 
         static void Loop(double delta)
         {
+            Multiplayer!.Poll();
             World!.Tick(delta);
         }
 
