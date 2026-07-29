@@ -11,5 +11,11 @@ namespace Client
         {
 
         }
+
+        public override void Tick(double delta)
+        {
+
+        }
+        
     }
 }

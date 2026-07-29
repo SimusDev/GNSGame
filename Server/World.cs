@@ -16,6 +16,11 @@ namespace Server
             }
         }
 
+        public override void Tick(double delta)
+        {
+
+        }
+
         public void ParseConsoleLine(string command)
         {
 
