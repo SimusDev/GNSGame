@@ -3,8 +3,10 @@ namespace Server
 {
     internal class Program 
     {
-        static Common.Network.MultiplayerAPI Multiplayer;
-        static World World;
+        static Common.Network.ServerMultiplayerAPI? Multiplayer;
+        static World? World;
+
+        const int PORT = 7856;
 
         static void Main(string[] args)
         {
@@ -13,13 +15,15 @@ namespace Server
 
             World.Initialize(Multiplayer);
 
+            Multiplayer.CreateServer(PORT);
+
             var loop = new Common.Core.Loop(Loop);
             loop.Start();
         }
 
         static void Loop(double delta)
         {
-            World.Tick(delta);
+            World!.Tick(delta);
         }
 
     }

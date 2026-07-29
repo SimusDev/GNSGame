@@ -3,8 +3,8 @@ namespace Client
 {
     internal class Program
     {
-        static Common.Network.MultiplayerAPI Multiplayer;
-        static Common.Core.Scene.World World;
+        static Common.Network.ClientMultiplayerAPI? Multiplayer;
+        static Common.Core.Scene.World? World;
 
         static void Main(string[] args)
         {
@@ -19,7 +19,7 @@ namespace Client
 
         static void Loop(double delta)
         {
-            World.Tick(delta);
+            World!.Tick(delta);
         }
 
     }
