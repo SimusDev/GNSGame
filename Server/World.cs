@@ -1,7 +1,6 @@
 ﻿
 using Common.Core.Scene;
 using Common.Network;
-
 namespace Server
 {
     public class World : Common.Core.Scene.World
@@ -12,7 +11,7 @@ namespace Server
         {
             while (!Console.KeyAvailable)
             {
-                ParseConsoleLine(Console.ReadLine());
+                ParseConsoleArgLine(Console.ReadLine());
             }
         }
 
@@ -21,10 +20,7 @@ namespace Server
 
         }
 
-        public void ParseConsoleLine(string command)
-        {
 
-        }
 
     }
 }
